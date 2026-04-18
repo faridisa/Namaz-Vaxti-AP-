@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaz Vaxtlari</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="app-title">Namaz Vaxtlari</div>
+
+      <div class="tabs">
+        <button
+          class="tab-btn active"
+          id="dailyBtn"
+          onclick="switchTab('daily')"
+        >
+          Günlük
+        </button>
+        <button class="tab-btn" id="monthlyBtn" onclick="switchTab('monthly')">
+          Aylıq
+        </button>
+      </div>
+
+      <!-- GÜNLÜK VIEW -->
+      <div class="view active" id="dailyView">
+        <div class="controls">
+          <select id="daySelect"></select>
+          <select id="monthSelectD">
+            <option value="1">Yanvar</option>
+            <option value="2">Fevral</option>
+            <option value="3">Mart</option>
+            <option value="4">Aprel</option>
+            <option value="5">May</option>
+            <option value="6">İyun</option>
+            <option value="7">İyul</option>
+            <option value="8">Avqust</option>
+            <option value="9">Sentyabr</option>
+            <option value="10">Oktyabr</option>
+            <option value="11">Noyabr</option>
+            <option value="12">Dekabr</option>
+          </select>
+          <select id="yearSelectD">
+            <option value="2026" selected>2026</option>
+            <option value="2027">2027</option>
+          </select>
+          <button class="load-btn" onclick="loadDaily()">Axtar</button>
+        </div>
+        <div class="date-label" id="todayDate">Yüklənir...</div>
+        <div class="prayer-grid" id="prayerCards">
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+      </div>
+
+      <!-- AYLIK VIEW -->
+      <div class="view" id="monthlyView">
+        <div class="controls">
+          <select id="monthSelectM">
+            <option value="1">Yanvar</option>
+            <option value="2">Fevral</option>
+            <option value="3">Mart</option>
+            <option value="4">Aprel</option>
+            <option value="5">May</option>
+            <option value="6">İyun</option>
+            <option value="7">İyul</option>
+            <option value="8">Avqust</option>
+            <option value="9">Sentyabr</option>
+            <option value="10">Oktyabr</option>
+            <option value="11">Noyabr</option>
+            <option value="12">Dekabr</option>
+          </select>
+          <select id="yearSelectM">
+            <option value="2026" selected>2026</option>
+            <option value="2027">2027</option>
+          </select>
+          <button class="load-btn" onclick="loadMonthly()">Axtar</button>
+        </div>
+        <div class="monthly-wrap">
+          <table class="monthly-table">
+            <thead>
+              <tr>
+                <th style="width: 55px">Gün</th>
+                <th>Fajr</th>
+                <th>Gün Cixma</th>
+                <th>Zöhr</th>
+                <th>Əsr</th>
+                <th>Məğrib</th>
+                <th>İşa</th>
+              </tr>
+            </thead>
+            <tbody id="monthlyBody">
+              <tr>
+                <td
+                  colspan="7"
+                  style="padding: 1.5rem; text-align: center; color: #777"
+                >
+                  Ay seçib "Axtar" düyməsinə basın
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./assets/js/script.js"></script>
+</html>
